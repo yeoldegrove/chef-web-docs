@@ -102,7 +102,7 @@ The following platforms are supported only via the community:
      - ``x86_64``
      - ``6.x``, ``7.x``
    * - Ubuntu
-     - ``i386``, ``x86_64``
+     - ``x86_64``
      - Current non-LTS releases
    * - Windows
      - ``x64``
