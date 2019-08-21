@@ -287,4 +287,7 @@ The following setting is often modified from the default as part of the tuning e
 
       550 = 350 + [(4 - 2) * (25 * 4)]
 
+``postgresql['sslmode']``
+	SSL encryption mode between Chef Server and PostgreSQL.  Valid settings are 'disable' (off) and 'require' (on).  Default value: 'disable'.  
+
 .. end_tag
