@@ -1,5 +1,5 @@
 =====================================================
-About Nodes
+Nodes
 =====================================================
 `[edit on GitHub] <https://github.com/chef/chef-web-docs/blob/master/chef_master/source/nodes.rst>`__
 
@@ -147,7 +147,7 @@ After the node object is rebuilt, all of the attributes are compared, and then t
 
 .. end_tag
 
-About Node Names
+Node Authentication and Node Names
 =====================================================
 The name of a node is required as part of the authentication process to the Chef Infra Server. The name of each node must be unique within an organization, but otherwise can be any string that matches the following regular expression::
 
