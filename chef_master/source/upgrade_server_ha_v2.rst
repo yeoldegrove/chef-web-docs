@@ -150,7 +150,7 @@ Check the status of the cluster:
 
      % chef-backend-ctl status
 
-DRBD HA to Chef Backend 2.x Upgrade
+DRBD/Keepalived HA to Chef Backend 2.x
 =====================================================
 
 For a guide to upgrading to Chef Backend from DRBD see the `Best Best Practices for Migrating Your Chef Server <https://blog.chef.io/2018/04/06/best-practices-for-migrating-your-chef-server/>`__ webinar from the `Chef Blog <https://blog.chef.io/>`__
