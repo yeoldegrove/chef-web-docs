@@ -3,8 +3,8 @@ AWS Driver Resources
 =====================================================
 `[edit on GitHub] <https://github.com/chef/chef-web-docs/blob/master/chef_master/source/provisioning_aws.rst>`__
 
-.. meta:: 
-    :robots: noindex 
+.. meta::
+    :robots: noindex
 
 .. tag EOL_provisioning
 
@@ -2043,7 +2043,7 @@ aws_internet_gateway
 =====================================================
 The ``aws_internet_gateway`` resource is a driver-specific resource used by Chef Provisioning. Use the ``aws_internet_gateway`` resource to configure an internet gateway for a defined virtual network within Amazon Virtual Private Cloud (VPC) (the networking layer of Amazon EC2).
 
-An internet gateway is a horizontally scaled, redundant, and highly available component within Amazon Virtual Private Cloud (VPC) that enables communication between instances within a defined virtual network and the Internet.
+An internet gateway is a horizontally scaled, redundant, and high availability component within Amazon Virtual Private Cloud (VPC) that enables communication between instances within a defined virtual network and the Internet.
 
 Syntax
 -----------------------------------------------------
