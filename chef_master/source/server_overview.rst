@@ -289,7 +289,7 @@ Use the following configuration settings in the chef-server.rb file to configure
    * - Setting
      - Description
    * - ``postgresql['db_connection_superuser']``
-     - Optional when ``postgresql['external']`` is set to ``true``. The PostgreSQL superuser name in username@hostname format.   Required when using external PostgreSQL on Azure. See ``postgresql['db_superuser']`` below. Default value: nil.
+     - Optional when ``postgresql['external']`` is set to ``true``. A PostgreSQL superuser name in ``username@hostname`` format used for creating PostgreSQL connections, where username would normally equal the value specified in ``postgresql['db_superuser']`` below. Required when using external PostgreSQL on Azure. See ``postgresql['db_superuser']`` below. Default value: ``nil``.
    * - ``postgresql['db_superuser']``
      - Required when ``postgresql['external']`` is set to ``true``. The PostgreSQL user name. This user must be granted either the ``CREATE ROLE`` and ``CREATE DATABASE`` permissions in PostgreSQL or be granted ``SUPERUSER`` permission. This user must also have an entry in the host-based authentication configuration file used by PostgreSQL (traditionally named ``pg_hba.conf``). Default value: ``'superuser_userid'``.
    * - ``postgresql['db_superuser_password']``
@@ -301,7 +301,7 @@ Use the following configuration settings in the chef-server.rb file to configure
    * - ``postgresql['port']``
      - Optional when ``postgresql['external']`` is set to ``true``. The port on which the service is to listen. The port used by PostgreSQL if that port is **not** 5432. Default value: ``5432``.
    * - ``postgresql['sql_connection_user']``
-     - Optional when ``postgresql['external']`` is set to ``true``. The PostgreSQL superuser name in username@hostname format.   Required when using external PostgreSQL on Azure. See ``postgresql['db_superuser']`` above. Default value: nil.  
+     - Optional when ``postgresql['external']`` is set to ``true``. A PostgreSQL superuser name in ``username@hostname`` format used for making PostgreSQL queries, where username would normally equal the value specified in ``postgresql['db_superuser']`` above.   Required when using external PostgreSQL on Azure. See ``postgresql['db_superuser']`` above. Default value: ``nil``.  
    * - ``postgresql['vip']``
      - Required when ``postgresql['external']`` is set to ``true``. The virtual IP address. The host for this IP address must be online and reachable from the Chef Infra Server via the port specified by ``postgresql['port']``. Set this value to the IP address or hostname for the machine on which external PostgreSQL is located when ``postgresql['external']`` is set to ``true``.
 
