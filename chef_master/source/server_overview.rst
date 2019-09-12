@@ -300,6 +300,8 @@ Use the following configuration settings in the chef-server.rb file to configure
      - Required. Set to ``true`` to run PostgreSQL external to the Chef Infra Server. Must be set once only on a new installation of the Chef Infra Server before the first ``chef-server-ctl reconfigure`` command is run. If this is set after a reconfigure or set to ``false``, any reconfigure of the Chef Infra Server will return an error. Default value: ``false``.
    * - ``postgresql['port']``
      - Optional when ``postgresql['external']`` is set to ``true``. The port on which the service is to listen. The port used by PostgreSQL if that port is **not** 5432. Default value: ``5432``.
+   * - ``postgresql['sql_connection_user']``
+     - Optional when ``postgresql['external']`` is set to ``true``. The PostgreSQL superuser name in username@hostname format.   Required when using external PostgreSQL on Azure. See ``postgresql['db_superuser']`` above. Default value: nil.  
    * - ``postgresql['vip']``
      - Required when ``postgresql['external']`` is set to ``true``. The virtual IP address. The host for this IP address must be online and reachable from the Chef Infra Server via the port specified by ``postgresql['port']``. Set this value to the IP address or hostname for the machine on which external PostgreSQL is located when ``postgresql['external']`` is set to ``true``.
 
