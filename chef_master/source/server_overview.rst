@@ -288,16 +288,6 @@ Use the following configuration settings in the chef-server.rb file to configure
 
    * - Setting
      - Description
-   * - ``bookshelf['sql_connection_user']``
-     - Optional when ``postgresql['external']`` is set to ``true``. Required when using external PostgreSQL on Microsoft Azure. The PostgreSQL user name in ``'username@hostname'`` format (e.g. ``'bookshelf@my_postgresql.postgres.database.azure.com'``) used for making PostgreSQL queries, where ``username`` would normally equal the value of ``bookshelf['sql_user']`` (default ``'bookshelf'``). Default value: ``nil``.
-   * - ``oc_bifrost['sql_connection_user']``
-     - Optional when ``postgresql['external']`` is set to ``true``. Required when using external PostgreSQL on Microsoft Azure. The PostgreSQL user name in ``'username@hostname'`` format (e.g. ``'bifrost@my_postgresql.postgres.database.azure.com'``) used for making PostgreSQL queries, where ``username`` would normally equal the value of ``oc_bifrost['sql_user']`` (default ``'bifrost'``). Default value: ``nil``.
-   * - ``oc_id['sql_connection_user']``
-     - Optional when ``postgresql['external']`` is set to ``true``. Required when using external PostgreSQL on Microsoft Azure. The PostgreSQL user name in ``'username@hostname'`` format (e.g. ``'oc_id@my_postgresql.postgres.database.azure.com'``) used for making PostgreSQL queries, where ``username`` would normally equal the value of ``oc_id['sql_user']`` (default ``'oc_id'``). Default value: ``nil``.
-   * - ``opscode_erchef['sql_connection_user']``
-     - Optional when ``postgresql['external']`` is set to ``true``. Required when using external PostgreSQL on Microsoft Azure. The PostgreSQL user name in ``'username@hostname'`` format (e.g. ``'opscode_chef@my_postgresql.postgres.database.azure.com'``) used for making PostgreSQL queries, where ``username`` would normally equal the value of ``opscode-erchef['sql_user']`` (default ``'opscode_chef'``). Default value: ``nil``.
-   * - ``postgresql['db_connection_superuser']``
-     - Optional when ``postgresql['external']`` is set to ``true``. Required when using external PostgreSQL on Microsoft Azure. The PostgreSQL superuser name in ``'username@hostname'`` format (e.g. ``'opscode_pgsql@my_postgresql.postgres.database.azure.com'``) used for creating PostgreSQL connections, where ``username`` would normally equal the value specified in ``postgresql['db_superuser']`` (below). Default value: ``nil``.
    * - ``postgresql['db_superuser']``
      - Required when ``postgresql['external']`` is set to ``true``. The PostgreSQL user name. This user must be granted either the ``CREATE ROLE`` and ``CREATE DATABASE`` permissions in PostgreSQL or be granted ``SUPERUSER`` permission. This user must also have an entry in the host-based authentication configuration file used by PostgreSQL (traditionally named ``pg_hba.conf``). Default value: ``'superuser_userid'``.
    * - ``postgresql['db_superuser_password']``
@@ -313,6 +303,27 @@ Use the following configuration settings in the chef-server.rb file to configure
 
 
 .. note:: See the list of `error messages that may be present </errors.html#external-postgresql>`_ when configuring the Chef Infra Server to use a remote PostgreSQL server.
+
+Optional Settings
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+The following optional settings are required when configuring External PostgreSQL on Microsoft Azure:
+
+.. list-table::
+   :widths: 200 300
+   :header-rows: 1
+
+   * - Setting
+     - Description
+   * - ``bookshelf['sql_connection_user']``
+     - The PostgreSQL user name in ``'username@hostname'`` format (e.g. ``'bookshelf@my_postgresql.postgres.database.azure.com'``) used for making PostgreSQL queries, where ``username`` would normally equal the value of ``bookshelf['sql_user']`` (default ``'bookshelf'``). Default value: ``nil``.
+   * - ``oc_bifrost['sql_connection_user']``
+     - The PostgreSQL user name in ``'username@hostname'`` format (e.g. ``'bifrost@my_postgresql.postgres.database.azure.com'``) used for making PostgreSQL queries, where ``username`` would normally equal the value of ``oc_bifrost['sql_user']`` (default ``'bifrost'``). Default value: ``nil``.
+   * - ``oc_id['sql_connection_user']``
+     - The PostgreSQL user name in ``'username@hostname'`` format (e.g. ``'oc_id@my_postgresql.postgres.database.azure.com'``) used for making PostgreSQL queries, where ``username`` would normally equal the value of ``oc_id['sql_user']`` (default ``'oc_id'``). Default value: ``nil``.
+   * - ``opscode_erchef['sql_connection_user']``
+     - The PostgreSQL user name in ``'username@hostname'`` format (e.g. ``'opscode_chef@my_postgresql.postgres.database.azure.com'``) used for making PostgreSQL queries, where ``username`` would normally equal the value of ``opscode-erchef['sql_user']`` (default ``'opscode_chef'``). Default value: ``nil``.
+   * - ``postgresql['db_connection_superuser']``
+     - The PostgreSQL superuser name in ``'username@hostname'`` format (e.g. ``'opscode_pgsql@my_postgresql.postgres.database.azure.com'``) used for creating PostgreSQL connections, where ``username`` would normally equal the value specified in ``postgresql['db_superuser']`` (below). Default value: ``nil``.
 
 Bookshelf Settings
 -----------------------------------------------------
