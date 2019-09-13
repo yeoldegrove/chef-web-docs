@@ -186,7 +186,7 @@ may copy them directly, or expose them via a common mounted location.
 
 For example, to copy using ssh:
 
-  .. code-block:: bash
+.. code-block:: bash
 
     scp /etc/chef-backend/chef-backend-secrets.json <USER>@<IP_BE2>:/home/<USER>
     scp /etc/chef-backend/chef-backend-secrets.json <USER>@<IP_BE3>:/home/<USER>
@@ -250,7 +250,7 @@ Step 4: Generate Chef Infra Server Configuration
 
 Log into the node from Step 1, and we will generate our chef-server frontend node configuration:
 
-  .. code-block:: bash
+.. code-block:: bash
 
     chef-backend-ctl gen-server-config <FE1-FQDN> -f chef-server.rb.FE1
     scp chef-server.rb.FE1 USER@<IP_FE1>:/home/<USER>
@@ -274,7 +274,7 @@ For each additional frontend node you wish to add to your cluster:
 #. Install the current chef-server-core package.
 #. Generate a new ``/etc/opscode/chef-server.rb`` from any of the backend nodes via
 
-    .. code-block:: bash
+   .. code-block:: bash
 
        chef-backend-ctl gen-server-config <FE_NAME-FQDN> > chef-server.rb.<FE_NAME>
 
@@ -290,9 +290,10 @@ For each additional frontend node you wish to add to your cluster:
 
       For Chef Server versions prior to 12.14, you will also need to copy the key files:
 
-        - /etc/opscode/webui_priv.pem
-        - /etc/opscode/webui_pub.pem
-        - /etc/opscode/pivotal.pem
+      - /etc/opscode/webui_priv.pem
+      - /etc/opscode/webui_pub.pem
+      - /etc/opscode/pivotal.pem
+
 #. On the new frontend node run ``mkdir -p /var/opt/opscode/upgrades/``.
 
 #. From the first frontend node, copy ``/var/opt/opscode/upgrades/migration-level`` to the same location on the new node.

@@ -128,29 +128,30 @@ Step 3: Upgrade the leader
 
    .. code-block:: bash
 
-      % chef-backend-ctl set-cluster-failover on
-      % chef-backend-ctl upgrade --failover
-      % chef-backend-ctl set-cluster-failover off
+      chef-backend-ctl set-cluster-failover on
+      chef-backend-ctl upgrade --failover
+      chef-backend-ctl set-cluster-failover off
 
 Step 4: Re-enable failover
 -----------------------------------------------------
 
 Allow failover again:
 
-   .. code-block:: bash
+.. code-block:: bash
 
-      % chef-backend-ctl set-cluster-failover on
+   chef-backend-ctl set-cluster-failover on
 
 Step 5: Verify the cluster is stable
 -----------------------------------------------------
 
 Check the status of the cluster:
 
-  .. code-block:: bash
+.. code-block:: bash
 
-     % chef-backend-ctl status
+     chef-backend-ctl status
 
 DRBD/Keepalived HA to Chef Backend 2.x
 =====================================================
 
 For a guide to upgrading to Chef Backend from DRBD see the `Best Best Practices for Migrating Your Chef Server <https://blog.chef.io/2018/04/06/best-practices-for-migrating-your-chef-server/>`__ webinar from the `Chef Blog <https://blog.chef.io/>`__
+
