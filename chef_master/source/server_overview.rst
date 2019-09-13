@@ -325,7 +325,7 @@ The following optional settings are required when configuring External PostgreSQ
    * - ``postgresql['db_connection_superuser']``
      - The PostgreSQL superuser name in ``'username@hostname'`` format (e.g. ``'opscode_pgsql@my_postgresql.postgres.database.azure.com'``) used for creating PostgreSQL connections, where ``username`` would normally equal the value specified in ``postgresql['db_superuser']`` (below). Default value: ``nil``.
 
-An example ``chef-server.rb`` configuration:
+An example ``chef-server.rb`` configuration for External PostgreSQL on Microsoft Azure:
 
 .. code-block:: ruby
 
