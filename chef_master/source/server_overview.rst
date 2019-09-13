@@ -325,6 +325,22 @@ The following optional settings are required when configuring External PostgreSQ
    * - ``postgresql['db_connection_superuser']``
      - The PostgreSQL superuser name in ``'username@hostname'`` format (e.g. ``'opscode_pgsql@my_postgresql.postgres.database.azure.com'``) used for creating PostgreSQL connections, where ``username`` would normally equal the value specified in ``postgresql['db_superuser']`` (below). Default value: ``nil``.
 
+An example ``chef-server.rb`` configuration:
+
+.. code-block:: ruby
+
+     topology 'standalone'
+     postgresql['external']=true
+     postgresql['vip']='my_postgresql.postgres.database.azure.com'
+     postgresql['db_superuser']='opscode_pgsql'
+     postgresql['db_superuser_password']='I1uvd3v0ps!'
+     postgresql['db_connection_superuser']='opscode_pgsql@my_postgresql.postgres.database.azure.com'
+     #postgresql['sslmode']='require' # required if 'Enforce SSL connection' is enabled on the PostgreSQL VM under Connection security / SSL settings
+     bookshelf['sql_connection_user']='bookshelf@my_postgresql.postgres.database.azure.com'
+     oc_bifrost['sql_connection_user']='bifrost@my_postgresql.postgres.database.azure.com'
+     oc_id['sql_connection_user']='oc_id@my_postgresql.postgres.database.azure.com'
+     opscode_erchef['sql_connection_user']='opscode_chef@my_postgresql.postgres.database.azure.com'
+
 Bookshelf Settings
 -----------------------------------------------------
 In instances that require cookbooks to be stored within a SQL backend, such as in a high availability setup, you must set the ``storage_type`` to ``:sql``:
