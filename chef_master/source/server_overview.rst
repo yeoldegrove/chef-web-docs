@@ -323,7 +323,7 @@ The following optional settings are required when configuring External PostgreSQ
    * - ``opscode_erchef['sql_connection_user']``
      - The PostgreSQL user name in ``'username@hostname'`` format (e.g. ``'opscode_chef@my_postgresql.postgres.database.azure.com'``) used for making PostgreSQL queries, where ``username`` would normally equal the value of ``opscode-erchef['sql_user']`` (default ``'opscode_chef'``). Default value: ``nil``.
    * - ``postgresql['db_connection_superuser']``
-     - The PostgreSQL superuser name in ``'username@hostname'`` format (e.g. ``'opscode_pgsql@my_postgresql.postgres.database.azure.com'``) used for creating PostgreSQL connections, where ``username`` would normally equal the value specified in ``postgresql['db_superuser']`` (below). Default value: ``nil``.
+     - The PostgreSQL superuser name in ``'username@hostname'`` format (e.g. ``'opscode_pgsql@my_postgresql.postgres.database.azure.com'``) used for creating PostgreSQL connections, where ``username`` would normally equal the value specified in ``postgresql['db_superuser']``. Default value: ``nil``.
 
 An example ``chef-server.rb`` configuration for External PostgreSQL on Microsoft Azure:
 
