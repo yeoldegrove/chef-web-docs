@@ -335,7 +335,7 @@ An example ``chef-server.rb`` configuration for External PostgreSQL on Microsoft
      postgresql['db_superuser']='opscode_pgsql'
      postgresql['db_superuser_password']='My_postgres_password1!'
      postgresql['db_connection_superuser']='opscode_pgsql@my_postgresql.postgres.database.azure.com'
-     # postgresql['sslmode']='require' # required if 'Enforce SSL connection' is enabled on the Azure PostgreSQL VM
+     # postgresql['sslmode']='require' # required if 'Enforce SSL connection' is enabled on Azure PostgreSQL
      bookshelf['sql_connection_user']='bookshelf@my_postgresql.postgres.database.azure.com'
      oc_bifrost['sql_connection_user']='bifrost@my_postgresql.postgres.database.azure.com'
      oc_id['sql_connection_user']='oc_id@my_postgresql.postgres.database.azure.com'
