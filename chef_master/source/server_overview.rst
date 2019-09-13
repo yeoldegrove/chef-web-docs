@@ -278,7 +278,7 @@ The following table describes the components in an external PostgreSQL configura
 
 .. DO NOT CHANGE THE FOLLOWING TITLE BECAUSE IT IS LINKED FROM THE ERROR MESSAGES IN THE CODE FOR THESE SETTINGS.
 
-PostgreSQL Settings
+External PostgreSQL Settings
 ----------------------------------------------------
 Use the following configuration settings in the chef-server.rb file to configure External PostgreSQL for use with the Chef Infra Server:
 
@@ -297,7 +297,7 @@ Use the following configuration settings in the chef-server.rb file to configure
    * - ``opscode_erchef['sql_connection_user']``
      - Optional when ``postgresql['external']`` is set to ``true``. Required when using external PostgreSQL on Microsoft Azure. The PostgreSQL user name in ``'username@hostname'`` format (e.g. ``'opscode_chef@my_postgresql.postgres.database.azure.com'``) used for making PostgreSQL queries, where ``username`` would normally equal the value of ``opscode-erchef['sql_user']`` (default ``'opscode_chef'``). Default value: ``nil``.
    * - ``postgresql['db_connection_superuser']``
-     - Optional when ``postgresql['external']`` is set to ``true``. Required when using external PostgreSQL on Microsoft Azure. The PostgreSQL superuser name in ``'username@hostname'`` format (e.g. ``'opscode_pgsql@my_postgresql.postgres.database.azure.com'``) used for creating PostgreSQL connections, where ``username`` would normally equal the value specified in ``postgresql['db_superuser']``. See ``postgresql['db_superuser']`` below. Default value: ``nil``.
+     - Optional when ``postgresql['external']`` is set to ``true``. Required when using external PostgreSQL on Microsoft Azure. The PostgreSQL superuser name in ``'username@hostname'`` format (e.g. ``'opscode_pgsql@my_postgresql.postgres.database.azure.com'``) used for creating PostgreSQL connections, where ``username`` would normally equal the value specified in ``postgresql['db_superuser']`` (below). Default value: ``nil``.
    * - ``postgresql['db_superuser']``
      - Required when ``postgresql['external']`` is set to ``true``. The PostgreSQL user name. This user must be granted either the ``CREATE ROLE`` and ``CREATE DATABASE`` permissions in PostgreSQL or be granted ``SUPERUSER`` permission. This user must also have an entry in the host-based authentication configuration file used by PostgreSQL (traditionally named ``pg_hba.conf``). Default value: ``'superuser_userid'``.
    * - ``postgresql['db_superuser_password']``
