@@ -301,9 +301,6 @@ Use the following configuration settings in the chef-server.rb file to configure
    * - ``postgresql['vip']``
      - Required when ``postgresql['external']`` is set to ``true``. The virtual IP address. The host for this IP address must be online and reachable from the Chef Infra Server via the port specified by ``postgresql['port']``. Set this value to the IP address or hostname for the machine on which external PostgreSQL is located when ``postgresql['external']`` is set to ``true``.
 
-
-.. note:: See the list of `error messages that may be present </errors.html#external-postgresql>`_ when configuring the Chef Infra Server to use a remote PostgreSQL server.
-
 Optional Settings
 +++++++++++++++++++++++++++++++++++++++++++++++++++++
 The following optional settings are required when configuring External PostgreSQL on Microsoft Azure:
@@ -340,6 +337,8 @@ An example ``chef-server.rb`` configuration for External PostgreSQL on Microsoft
      oc_bifrost['sql_connection_user']='bifrost@my_postgresql.postgres.database.azure.com'
      oc_id['sql_connection_user']='oc_id@my_postgresql.postgres.database.azure.com'
      opscode_erchef['sql_connection_user']='opscode_chef@my_postgresql.postgres.database.azure.com'
+
+.. note:: See the list of `error messages that may be present </errors.html#external-postgresql>`_ when configuring the Chef Infra Server to use a remote PostgreSQL server.
 
 Bookshelf Settings
 -----------------------------------------------------
