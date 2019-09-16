@@ -151,6 +151,9 @@ This configuration file has the following settings for ``bookshelf``:
 ``bookshelf['stream_download']``
    Enable stream downloading of cookbooks. This setting (when ``true``) typically results in improved cookbook download performance, especially with the memory usage of the **bookshelf** service and the behavior of load balancers and proxies in-between Chef Infra Client and the Chef Infra Server. Default value: ``true``.
 
+``bookshelf['sql_connection_user']``
+   The PostgreSQL user name in ``'<username@hostname>'`` format (e.g. ``'bookshelf@my_postgresql.postgres.database.azure.com'``) used for making PostgreSQL queries, where ``username`` would normally equal the value of ``bookshelf['sql_user']`` (default ``'bookshelf'``). Default value: ``nil``.
+
 ``bookshelf['vip']``
    The virtual IP address. This may point at an external storage location, such as Amazon EC2. See `AWS external bookshelf settings </server_overview.html#external-bookshelf-settings>`__ for more information on configuring external bookshelf. Default value: ``127.0.0.1``.
 
@@ -660,6 +663,9 @@ This configuration file has the following settings for ``oc_bifrost``:
 ``oc_bifrost['port']``
    The port on which the service is to listen. Default value: ``9463``.
 
+  ``oc_bifrost['sql_connection_user']``
+   The PostgreSQL user name in ``'<username@hostname>'`` format (e.g. ``'bifrost@my_postgresql.postgres.database.azure.com'``) used for making PostgreSQL queries, where ``username`` would normally equal the value of ``oc_bifrost['sql_user']`` (default ``'bifrost'``). Default value: ``nil``.
+
 ``oc_bifrost['sql_password']``
    The password for the ``sql_user``. Default value: **generated**.
 
@@ -806,6 +812,9 @@ This configuration file has the following settings for ``oc-id``:
 ``oc_id['port']``
    The port on which the service is to listen. Default value: ``9090``.
 
+``oc_id['sql_connection_user']``
+   The PostgreSQL user name in ``'<username@hostname>'`` format (e.g. ``'oc_id@my_postgresql.postgres.database.azure.com'``) used for making PostgreSQL queries, where ``username`` would normally equal the value of ``oc_id['sql_user']`` (default ``'oc_id'``). Default value: ``nil``.
+     
 ``oc_id['sql_database']``
    The name of the database. Default value: ``oc_id``.
 
@@ -1020,6 +1029,9 @@ This configuration file has the following settings for ``opscode-erchef``:
 ``opscode_erchef['s3_url_ttl']``
    The amount of time (in seconds) before connections to the server expire. If node bootstraps are timing out, increase this setting. Default value: ``28800``.
 
+``opscode_erchef['sql_connection_user']``
+   The PostgreSQL user name in ``'<username@hostname>'`` format (e.g. ``'opscode_chef@my_postgresql.postgres.database.azure.com'``) used for making PostgreSQL queries, where ``username`` would normally equal the value of ``opscode-erchef['sql_user']`` (default ``'opscode_chef'``). Default value: ``nil``.
+
 ``opscode_erchef['strict_search_result_acls']``
    .. tag settings_strict_search_result_acls
 
@@ -1204,6 +1216,9 @@ This configuration file has the following settings for ``postgresql``:
 ``postgresql['data_dir']``
    The directory in which on-disk data is stored. The default value is the recommended value. Default value: ``/var/opt/opscode/postgresql/#{node['private_chef']['postgresql']['version']}/data``.
 
+``postgresql['db_connection_superuser']``
+   The PostgreSQL superuser name in ``'<username@hostname>'`` format (e.g. ``'opscode_pgsql@my_postgresql.postgres.database.azure.com'``) used for creating PostgreSQL connections, where ``username`` would normally equal the value specified in ``postgresql['db_superuser']``. Default value: ``nil``.
+
 ``postgresql['db_superuser']``
    Default value: ``opscode-pgsql``. If ``username`` is set, set ``db_superuser`` to the same value.
 
@@ -1265,6 +1280,9 @@ This configuration file has the following settings for ``postgresql``:
 
 ``postgresql['shmmax']``
    The maximum amount of shared memory. Default value: ``17179869184``.
+
+``postgresql['sslmode']``
+   SSL encryption mode between Chef Server and PostgreSQL. Valid settings are 'disable' (off) and 'require' (on). Default value: 'disable'.
 
 ``postgresql['trust_auth_cidr_addresses']``
    Use for clear-text passwords. See ``md5_auth_cidr_addresses``. Default value: ``'127.0.0.1/32', '::1/128'``.
