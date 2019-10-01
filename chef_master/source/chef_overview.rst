@@ -125,7 +125,7 @@ Some important tools and components of Chef Workstation include:
 
        * Chef Infra Client
        * chef and knife command line tools
-       * Testing tools such as Test Kitchen, ChefSpec, Cookstyle, and Foodcritic
+       * Testing tools such as Test Kitchen, ChefSpec, and Cookstyle
        * Chef InSpec
        * Everything else needed to author cookbooks and upload them to the Chef Infra Server
 
@@ -324,7 +324,7 @@ Cookbooks are comprised of the following components:
           :width: 100px
           :align: center
 
-     - Testing cookbooks improves the quality of those cookbooks by ensuring they are doing what they are supposed to do and that they are authored in a consistent manner. Unit and integration testing validates the recipes in cookbooks. Syntax testing---often called linting---validates the quality of the code itself. The following tools are popular tools used for testing Chef recipes: Test Kitchen, ChefSpec, and Foodcritic.
+     - Testing cookbooks improves the quality of those cookbooks by ensuring they are doing what they are supposed to do and that they are authored in a consistent manner. Unit and integration testing validates the recipes in cookbooks. Syntax testing---often called linting---validates the quality of the code itself. The following tools are popular tools used for testing Chef recipes: Test Kitchen, ChefSpec, and Cookstyle.
 
 Nodes
 =====================================================
@@ -390,7 +390,7 @@ The key components of nodes that are under management by Chef include:
 
      - .. tag chef_client_summary
 
-       Chef Infra Client is an agent that runs locally on every node that is under management by Chef Infra Server. When a Chef Infra Client is run, it will perform all of the steps that are required to bring the node into the expected state, including:
+       Chef Infra Client is an agent that runs locally on every node that is under management by Chef Infra Server. When Chef Infra Client runs, performs all of the steps required for bringing a node into the expected state, including:
 
        * Registering and authenticating the node with Chef Infra Server
        * Building the node object
@@ -403,7 +403,7 @@ The key components of nodes that are under management by Chef include:
 
        .. tag security_key_pairs_chef_client
 
-       RSA public key-pairs are used to authenticate Chef Infra Client with the Chef Infra Server every time a Chef Infra Client needs access to data that is stored on the Chef Infra Server. This prevents any node from accessing data that it shouldn't and it ensures that only nodes that are properly registered with the Chef Infra Server can be managed.
+       Chef Infra Client authenticates with the Chef Infra Server using RSA public key-pairs each time a Chef Infra Client needs access to data that is stored on the Chef Infra Server. This prevents any node from accessing data that it shouldn't and it ensures that only nodes that are properly registered with the Chef Infra Server can be managed.
 
        .. end_tag
 
@@ -432,7 +432,7 @@ The key components of nodes that are under management by Chef include:
 
        .. end_tag
 
-The Chef Server
+The Chef Infra Server
 =====================================================
 .. tag chef_server
 
@@ -527,7 +527,7 @@ Some important aspects of policy include:
 
      - .. tag environment
 
-       An environment is a way to map an organization's real-life workflow to what can be configured and managed when using Chef Infra Server. Every organization begins with a single environment called the ``_default`` environment, which cannot be modified (or deleted). Additional environments can be created to reflect each organization's patterns and workflow. For example, creating ``production``, ``staging``, ``testing``, and ``development`` environments. Generally, an environment is also associated with one (or more) cookbook versions.
+       An environment is a way to map an organization's real-life workflow to what can be configured and managed when using Chef Infra. Every organization begins with a single environment called the ``_default`` environment, which cannot be modified (or deleted). Additional environments can be created to reflect each organization's patterns and workflow. For example, creating ``production``, ``staging``, ``testing``, and ``development`` environments. Generally, an environment is also associated with one (or more) cookbook versions.
 
        .. end_tag
 

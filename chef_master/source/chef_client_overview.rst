@@ -15,7 +15,7 @@ Chef Infra Client Overview
 
      - .. tag chef_client_summary
 
-       Chef Infra Client is an agent that runs locally on every node that is under management by Chef Infra Server. When a Chef Infra Client is run, it will perform all of the steps that are required to bring the node into the expected state, including:
+       Chef Infra Client is an agent that runs locally on every node that is under management by Chef Infra Server. When Chef Infra Client runs, performs all of the steps required for bringing a node into the expected state, including:
 
        * Registering and authenticating the node with Chef Infra Server
        * Building the node object
@@ -28,7 +28,7 @@ Chef Infra Client Overview
 
        .. tag security_key_pairs_chef_client
 
-       RSA public key-pairs are used to authenticate Chef Infra Client with the Chef Infra Server every time a Chef Infra Client needs access to data that is stored on the Chef Infra Server. This prevents any node from accessing data that it shouldn't and it ensures that only nodes that are properly registered with the Chef Infra Server can be managed.
+       Chef Infra Client authenticates with the Chef Infra Server using RSA public key-pairs each time a Chef Infra Client needs access to data that is stored on the Chef Infra Server. This prevents any node from accessing data that it shouldn't and it ensures that only nodes that are properly registered with the Chef Infra Server can be managed.
 
        .. end_tag
 
@@ -54,7 +54,7 @@ During every Chef Infra Client run, the following happens:
      - Description
    * - **Get configuration data**
      - Chef Infra Client gets process configuration data from the `client.rb </config_rb_client.html>`_ file on the `node </nodes.html>`_, and then gets node configuration data from Ohai. One important piece of configuration data is the name of the node, which is found in the ``node_name`` attribute in the client.rb file or is provided by Ohai. If Ohai provides the name of a node, it is typically the FQDN for the node, which is always unique within an organization.
-   * - **Authenticate to the Chef Server**
+   * - **Authenticate to the Chef Infra Server**
      - Chef Infra Client `authenticates </auth.html>`_ to the Chef Infra Server using an RSA private key and the Chef Infra Server API. The name of the node is required as part of the authentication process to the Chef Infra Server. If this is the first Chef Infra Client run for a node, the chef-validator will be used to generate the RSA private key.
    * - **Get, rebuild the node object**
      - Chef Infra Client pulls down the node object from the Chef Infra Server. If this is the first Chef Infra Client run for the node, there will not be a node object to pull down from the Chef Infra Server. After the node object is pulled down from the Chef Infra Server, Chef Infra Client rebuilds the node object. If this is the first Chef Infra Client run for the node, the rebuilt node object will contain only the default run-list. For any subsequent Chef Infra Client run, the rebuilt node object will also contain the run-list from the previous Chef Infra Client run.

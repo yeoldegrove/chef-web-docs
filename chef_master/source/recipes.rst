@@ -56,7 +56,7 @@ Chef Infra Client uses six types of attributes to determine the value that is ap
 
    * - ``force_default``
      - .. tag node_attribute_type_force_default
-     
+
        Use the ``force_default`` attribute to ensure that an attribute defined in a cookbook (by an attribute file or by a recipe) takes precedence over a ``default`` attribute set by a role or an environment.
 
        .. end_tag
@@ -81,7 +81,7 @@ Chef Infra Client uses six types of attributes to determine the value that is ap
        Use the ``force_override`` attribute to ensure that an attribute defined in a cookbook (by an attribute file or by a recipe) takes precedence over an ``override`` attribute set by a role or an environment.
 
        .. end_tag
-       
+
    * - ``automatic``
      - .. tag node_attribute_type_automatic
 
@@ -93,7 +93,7 @@ Attribute Persistence
 -----------------------------------------------------
 .. tag node_attribute_persistence
 
-At the beginning of a Chef Infra Client run, all attributes except for normal attributes are reset. Chef Infra Client rebuilds them using automatic attributes collected by Ohai at the beginning of each Chef Infra Client run and then using default and override attributes that are specified in cookbooks or by roles and environments. All attributes are then merged and applied to the node according to attribute precedence. At the conclusion of each Chef Infra Client run, the attributes that were applied to the node are saved to the Chef Infra Server as part of the node object.
+All attributes except for normal attributes are reset at the beginning of a Chef Infra Client run. Chef Infra Client rebuilds these attributes using automatic attributes collected by Ohai at the beginning of each Chef Infra Client run, and then uses default and override attributes that are specified in cookbooks, roles, environments, and Policyfiles. All attributes are then merged and applied to the node according to attribute precedence. The attributes that were applied to the node are saved to the Chef Infra Server as part of the node object at the conclusion of each Chef Infra Client run.
 
 .. end_tag
 
@@ -563,7 +563,7 @@ where ``::default_recipe`` is implied (and does not need to be specified). On a 
      ]
    }
 
-Chef Server
+Chef Infra Server
 +++++++++++++++++++++++++++++++++++++++++++++++++++++
 Use knife to add a recipe to the run-list for a node. For example:
 
