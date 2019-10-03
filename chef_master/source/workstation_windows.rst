@@ -24,34 +24,15 @@ Supported Host Operating Systems:
    * - Platform
      - Version
    * - Apple macOS
-     - 10.11, 10.12, 10.13, 10.14
+     - 10.13, 10.14, 10.15
    * - Microsoft Windows
-     - 10, Server 2008 R2, Server 2012, Server 2012 R2, Server 2016
+     - 10, Server 2012, Server 2012 R2, Server 2016, Server 2019
    * - Red Hat Enterprise Linux / CentOS
-     - 6.x, 7.x
-   * - SUSE Enterprise Linux Server
-     - 11 SP4, 12 SP1+, 15
+     - 6.x, 7.x, 8.x
    * - Ubuntu
-     - 14.04, 16.04, 18.04
+     - 16.04, 18.04
    * - Debian
-     - 7.x, 8.x, 9.x
-
-.. list-table:: Supported Target Operating System
-   :widths: 15 15
-   :header-rows: 1
-
-   * - Platform
-     - Version
-   * - Microsoft Windows
-     - 10, Server 2008 R2, Server 2012, Server 2012 R2, Server 2016
-   * - Red Hat Enterprise Linux
-     - 6.x, 7.x
-   * - SUSE Enterprise Linux Server
-     - 11 SP4, 12 SP1+, 15
-   * - Ubuntu
-     - 14.04, 16.04, 18.04
-   * - Debian
-     - 7.x, 8.x, 9.x
+     - 8.x, 9.x, 10.x
 
 Chef Workstation System Requirements
 ----------------------------------------------------
@@ -78,18 +59,18 @@ Chef Workstation App
    - You must have a graphical window manager running
    - Additional libraries may be required. See `Running the Chef Workstation App <https://chef-workstation-app.html>`_ for more details.
 
-Installing ChefDK
+Installing Chef Workstation
 ==================================================
 
-In some cases, such as if you're working with older or unsupported systems, you may need to use ChefDK instead of Chef Workstation. Download ChefDK by following the installation instructions on `Installing ChefDK </install_dk.html>`_.
+In some cases, such as if you're working with older or unsupported systems, you may need to use Chef Workstation instead of Chef Workstation. Download Chef Workstation by following the installation instructions on `Installing Chef Workstation </install_workstation.html>`_.
 
-#. Visit the `ChefDK downloads page <https://downloads.chef.io/chefdk>`_ and select the appropriate package for your Windows version. Select the **Download** button.
-#. Follow the steps to accept the license and install ChefDK. You will have the option to change your install location; by default the installer uses the ``C:\opscode\chefdk\`` directory.
+#. Visit the `Chef Workstation downloads page <https://downloads.chef.io/chef-workstation>`_ and select the appropriate package for your Windows version. Select the **Download** button.
+#. Follow the steps to accept the license and install Chef Workstation. You will have the option to change your install location; by default the installer uses the ``C:\opscode\Chef Workstation\`` directory.
 
-Verify the Chef Workstation or ChefDK Installation
------------------------------------------------------
+Verify the Chef Workstation or Chef Workstation Installation
+------------------------------------------------------------
 
-To verify the ChefDK installation, run:
+To verify the Chef Workstation installation, run:
 
 .. code-block:: shell
 
@@ -117,7 +98,7 @@ Top-level Directory Names
 +++++++++++++++++++++++++++++++++++++++++++++++++++++
 .. tag windows_top_level_directory_names
 
-Windows will throw errors when path name lengths are too long. For this reason, it's often helpful to use a very short top-level directory, much like what is done in UNIX and Linux. For example, Chef uses ``/opt/`` to install ChefDK on macOS. A similar approach can be done on Microsoft Windows, by creating a top-level directory with a short name. For example: ``C:\chef``.
+Windows will throw errors when path name lengths are too long. For this reason, it's often helpful to use a very short top-level directory, much like what is done in UNIX and Linux. For example, Chef uses ``/opt/`` to install Chef Workstation on macOS. A similar approach can be done on Microsoft Windows, by creating a top-level directory with a short name. For example: ``C:\chef``.
 
 .. end_tag
 
